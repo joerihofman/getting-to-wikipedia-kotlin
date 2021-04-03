@@ -7,6 +7,8 @@ plugins {
 group = "nl.joerihofman"
 version = "1.0"
 
+val ktorVersion = "1.5.3"
+
 repositories {
     mavenCentral()
     jcenter()
@@ -19,7 +21,10 @@ dependencies {
     testImplementation(kotlin("test-junit5"))
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.0")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.6.0")
+
     implementation(kotlin("stdlib-jdk8"))
+    implementation("io.ktor:ktor-client-core:$ktorVersion")
+    implementation("io.ktor:ktor-client-apache:$ktorVersion")
 }
 
 val compileKotlin: KotlinCompile by tasks
